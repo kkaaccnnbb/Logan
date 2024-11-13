@@ -437,7 +437,7 @@ function library.new(library, name,theme)
         TabIco.BackgroundTransparency = 1.000
         TabIco.BorderSizePixel = 0
         TabIco.Size = UDim2.new(0, 24, 0, 24)
-        TabIco.Image = ("rbxassetid://16060333448"):format((icon or 4370341699))
+        TabIco.Image = ("rbxassetid://96585764887799"):format((icon or 4370341699))
         TabIco.ImageTransparency = 0.2
         
         TabText.Name = "TabText"
@@ -524,14 +524,14 @@ function library.new(library, name,theme)
           SectionOpen.BorderSizePixel = 0
           SectionOpen.Position = UDim2.new(0, -33, 0, 5)
           SectionOpen.Size = UDim2.new(0, 26, 0, 26)
-          SectionOpen.Image = "http://www.roblox.com/asset/?id=16060333448"
+          SectionOpen.Image = "rbxassetid://123174940749601"
           
           SectionOpened.Name = "SectionOpened"
           SectionOpened.Parent = SectionOpen
           SectionOpened.BackgroundTransparency = 1.000
           SectionOpened.BorderSizePixel = 0
           SectionOpened.Size = UDim2.new(0, 26, 0, 26)
-          SectionOpened.Image = "http://www.roblox.com/asset/?id=16060333448"
+          SectionOpened.Image = "rbxassetid://123174940749601"
           SectionOpened.ImageTransparency = 1.000
     
           SectionToggle.Name = "SectionToggle"
