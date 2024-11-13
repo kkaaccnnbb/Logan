@@ -1,4 +1,3 @@
-
 repeat task.wait() until game:IsLoaded()
 local library = {}
 local ToggleUI = false
@@ -240,7 +239,7 @@ end
       TabMain.Name = "TabMain"
       TabMain.Parent = Main
       TabMain.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-      TabMain.BackgroundTransparency = allTransparency
+      TabMain.BackgroundTransparency = 1.000
       TabMain.Position = UDim2.new(0.217000037, 0, 0, 3)
       TabMain.Size = UDim2.new(0, 448, 0, 353)
       
@@ -276,7 +275,7 @@ end
       TabBtns.Parent = Side
       TabBtns.Active = true
       TabBtns.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-      TabBtns.BackgroundTransparency = allTransparency
+      TabBtns.BackgroundTransparency = 1.000
       TabBtns.BorderSizePixel = 0
       TabBtns.Position = UDim2.new(0, 0, 0.0973535776, 0)
       TabBtns.Size = UDim2.new(0, 110, 0, 318)
@@ -441,7 +440,7 @@ end
         
         TabIco.Name = "TabIco"
         TabIco.Parent = TabBtns
-        TabIco.BackgroundTransparency = allTransparency
+        TabIco.BackgroundTransparency = 1.000
         TabIco.BorderSizePixel = 0
         TabIco.Size = UDim2.new(0, 24, 0, 24)
         TabIco.Image = ("rbxassetid://%s"):format((icon or 4370341699))
@@ -450,7 +449,7 @@ end
         TabText.Name = "TabText"
         TabText.Parent = TabIco
         TabText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        TabText.BackgroundTransparency = allTransparency
+        TabText.BackgroundTransparency = 1.000
         TabText.Position = UDim2.new(1.41666663, 0, 0, 0)
         TabText.Size = UDim2.new(0, 76, 0, 24)
         TabText.Font = Enum.Font.GothamSemibold
@@ -463,7 +462,7 @@ end
         TabBtn.Name = "TabBtn"
         TabBtn.Parent = TabIco
         TabBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        TabBtn.BackgroundTransparency = allTransparency
+        TabBtn.BackgroundTransparency = 1.000
         TabBtn.BorderSizePixel = 0
         TabBtn.Size = UDim2.new(0, 110, 0, 24)
         TabBtn.AutoButtonColor = false
@@ -516,7 +515,7 @@ end
           SectionText.Name = "SectionText"
           SectionText.Parent = Section
           SectionText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-          SectionText.BackgroundTransparency = allTransparency
+          SectionText.BackgroundTransparency = 1.000
           SectionText.Position = UDim2.new(0.0887396261, 0, 0, 0)
           SectionText.Size = UDim2.new(0, 401, 0, 36)
           SectionText.Font = Enum.Font.GothamSemibold
@@ -535,11 +534,11 @@ end
           
           SectionOpened.Name = "SectionOpened"
           SectionOpened.Parent = SectionOpen
-          SectionOpened.BackgroundTransparency = allTransparency
+          SectionOpened.BackgroundTransparency = 1.000
           SectionOpened.BorderSizePixel = 0
           SectionOpened.Size = UDim2.new(0, 26, 0, 26)
           SectionOpened.Image = "http://www.roblox.com/asset/?id=6031302932"
-          SectionOpened.ImageTransparency = allTransparency
+          SectionOpened.ImageTransparency = 1.000
     
           SectionToggle.Name = "SectionToggle"
           SectionToggle.Parent = SectionOpen
@@ -907,7 +906,7 @@ end
             
             TextBox.Parent = BoxBG
             TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            TextBox.BackgroundTransparency = allTransparency
+            TextBox.BackgroundTransparency = 1.000
             TextBox.BorderSizePixel = 0
             TextBox.Size = UDim2.new(1, 0, 1, 0)
             TextBox.Font = Enum.Font.Gotham
@@ -1030,7 +1029,7 @@ end
             SliderValue.Name = "SliderValue"
             SliderValue.Parent = SliderValBG
             SliderValue.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            SliderValue.BackgroundTransparency = allTransparency
+            SliderValue.BackgroundTransparency = 1.000
             SliderValue.BorderSizePixel = 0
             SliderValue.Size = UDim2.new(1, 0, 1, 0)
             SliderValue.Font = Enum.Font.Gotham
@@ -1217,7 +1216,7 @@ end
             DropdownOpen.Parent = DropdownTop
             DropdownOpen.AnchorPoint = Vector2.new(0, 0.5)
             DropdownOpen.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            DropdownOpen.BackgroundTransparency = allTransparency
+            DropdownOpen.BackgroundTransparency = 1.000
             DropdownOpen.BorderSizePixel = 0
             DropdownOpen.Position = UDim2.new(0.918383181, 0, 0.5, 0)
             DropdownOpen.Size = UDim2.new(0, 20, 0, 20)
@@ -1230,7 +1229,7 @@ end
             DropdownText.Name = "DropdownText"
             DropdownText.Parent = DropdownTop
             DropdownText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            DropdownText.BackgroundTransparency = allTransparency
+            DropdownText.BackgroundTransparency = 1.000
             DropdownText.BorderSizePixel = 0
             DropdownText.Position = UDim2.new(0.0373831764, 0, 0, 0)
             DropdownText.Size = UDim2.new(0, 184, 0, 38)
