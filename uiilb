@@ -200,11 +200,12 @@ function library.new(library, name,theme)
       DropShadow.Name = "DropShadow"
       DropShadow.Parent = DropShadowHolder
       DropShadow.AnchorPoint = Vector2.new(0.5, 0.5)
-      DropShadow.BackgroundTransparency = 1.000
+      DropShadow.BackgroundTransparency = 0.000
+      DropShadow.BackgroundColor3 = Color3.fromRGB(147, 66, 255)
       DropShadow.Position = UDim2.new(0.5, 0, 0.5, 0)
       DropShadow.Size = UDim2.new(1, 10, 1, 10)
-      DropShadow.Image = "rbxassetid://18351220853"
-      DropShadow.ImageColor3 = Color3.fromRGB(255,255,255)
+      DropShadow.Image = "rbxassetid://14811612333"
+      DropShadow.ImageColor3 = Color3.fromRGB(147, 66, 255)
       DropShadow.SliceCenter = Rect.new(49, 49, 450, 450)
 
 
