@@ -1,3 +1,4 @@
+getgenv().ATRSOISLOAD = true
 repeat task.wait() until game:IsLoaded()
 local library = {}
 local ToggleUI = false
@@ -114,9 +115,9 @@ function drag(frame, hold)
 		end
 	end)
 end
-
+coregui = cloneref(game:GetService("CoreGui"))
 function library.new(library, name,theme)
-    for _, v in next, services.CoreGui:GetChildren() do
+    for _, v in next, game:GetService("CoreGui"):GetChildren() do
         if v.Name == "frosty" then
           v:Destroy()
         end
@@ -126,6 +127,11 @@ function library.new(library, name,theme)
     zyColor= Color3.fromRGB(25, 25, 25)
     beijingColor = Color3.fromRGB(25, 25, 25)
     DTTransparency = 0.6
+    Custom=Color3.fromRGB(255, 0, 0)
+    local ProjectGui = coregui
+    if coregui:FindFirstChild("RobloxGui") then
+        ProjectGui = coregui.RobloxGui
+    end
       local dogent = Instance.new("ScreenGui")
       local Main = Instance.new("Frame")
       local TabMain = Instance.new("Frame")
@@ -149,7 +155,7 @@ function library.new(library, name,theme)
       if syn and syn.protect_gui then syn.protect_gui(dogent) end
     
       dogent.Name = "frosty"
-      dogent.Parent = services.CoreGui
+      dogent.Parent = ProjectGui
       
       function UiDestroy()
           dogent:Destroy()
@@ -524,14 +530,14 @@ function library.new(library, name,theme)
           SectionOpen.BorderSizePixel = 0
           SectionOpen.Position = UDim2.new(0, -33, 0, 5)
           SectionOpen.Size = UDim2.new(0, 26, 0, 26)
-          SectionOpen.Image = "rbxassetid://123174940749601"
+          SectionOpen.Image = "rbxassetid://13287562883"
           
           SectionOpened.Name = "SectionOpened"
           SectionOpened.Parent = SectionOpen
           SectionOpened.BackgroundTransparency = 1.000
           SectionOpened.BorderSizePixel = 0
           SectionOpened.Size = UDim2.new(0, 26, 0, 26)
-          SectionOpened.Image = "rbxassetid://123174940749601"
+          SectionOpened.Image = "rbxassetid://13287562883"
           SectionOpened.ImageTransparency = 1.000
     
           SectionToggle.Name = "SectionToggle"
@@ -638,7 +644,12 @@ function library.new(library, name,theme)
           LabelC.CornerRadius = UDim.new(0, 6)
           LabelC.Name = "LabelC"
           LabelC.Parent = TextLabel
-          return TextLabel
+          
+          local funcs = {}
+          funcs.SetLabel = function(self,text)
+              TextLabel.Text = text
+          end
+          return funcs
         end
     
           function section.Toggle(section, text, flag, enabled, callback)
@@ -692,7 +703,7 @@ function library.new(library, name,theme)
             
             ToggleSwitch.Name = "ToggleSwitch"
             ToggleSwitch.Parent = ToggleDisable
-            ToggleSwitch.BackgroundColor3 = beijingColor
+            ToggleSwitch.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
             ToggleSwitch.Size = UDim2.new(0, 24, 0, 22)
             
             ToggleSwitchC.CornerRadius = UDim.new(0, 6)
@@ -707,7 +718,7 @@ function library.new(library, name,theme)
               SetState = function(self, state)
                 if state == nil then state = not library.flags[flag] end
                 if library.flags[flag] == state then return end
-                services.TweenService:Create(ToggleSwitch, TweenInfo.new(0.2), {Position = UDim2.new(0, (state and ToggleSwitch.Size.X.Offset / 2 or 0), 0, 0), BackgroundColor3 = (state and Color3.fromRGB(255, 255, 255) or beijingColor)}):Play()
+                services.TweenService:Create(ToggleSwitch, TweenInfo.new(0.2), {Position = UDim2.new(0, (state and ToggleSwitch.Size.X.Offset / 2 or 0), 0, 0), BackgroundColor3 = (state and Color3.fromRGB(0, 255, 0) or Custom)}):Play()
                 library.flags[flag] = state
                 callback(state)
               end,
@@ -1357,4 +1368,4 @@ function library.new(library, name,theme)
       end
       return window
     end
-  return library
+return library
