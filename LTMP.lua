@@ -241,8 +241,8 @@ local function lowerBridge(value)
     end
   end;
 end
-function modwood()
-    if not isfile("NoNNNNVQEBZQGE") then
+
+if not isfile("NoNNNNVQEBZQGE") then
     notify("Dark","缺失主要文件正在安装中",3)
     local script = [[
 local oldPosition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
@@ -264,61 +264,61 @@ for _, Log in pairs(game.Workspace.LogModels:GetChildren()) do
 end
 ]]
     writefile("NoNNNNVQEBZQGE",script)
-    notify("Dark","安装完毕请重新点击",3)
-    return
-  end
-  local wood
-  local Saw
-  notify("Dark", "请点击一颗树", 4)
-  local ModTree = mouse.Button1Up:Connect(function()
-    local obj = mouse.Target.Parent
-    if not obj:FindFirstChild "RootCut" and obj.Parent.Name == "TreeRegion" then
-      return notify("错误!", "这棵树还没有砍!", 3)
-    end
-    if obj:FindFirstChild "Owner" and obj.Owner.Value == lp and obj:FindFirstChild "WoodSection" then
-      wood = obj
-      notify("Dark", "已选择树!", 3)
-    end
-    if obj.Name:find("Sawmill")then
-      Saw=sawmill;
-      notify("Dark","剧木机已选择",4)
-     elseif obj.Parent.Name:find("Sawmill")or obj.Parent:FindFirstChild"BlockageAlert"then
-      Saw=obj.Parent
-      notify("Dark","剧木机已选择",4)
-    end
-  end)
-  repeat task.wait(.01) until wood and Saw ~= nil
-  ModTree:Disconnect()
-  ModTree = nil
-  local SawC = Saw.Particles.CFrame + Vector3.new(0.7, 0,0)
-  local cu,cw= 0,nil
-  for p, I in next, wood:GetChildren() do
-    if I.Name == "WoodSection" then
-      if I.ID.Value > cu then
-        cu = I.ID.Value
-        cw=I
-      end
-    end
-  end
-  for p, I in next, wood:GetChildren() do
-    if I.Name == "WoodSection" then
-      for p, b in next, I.ChildIDs:GetChildren() do
-        if b.Value ==cu then
-          cv = I
+end
+function modwood()
+    local wood
+    local Saw
+    notify("Dark", "请点击一颗树", 4)
+    local ModTree = mouse.Button1Up:Connect(function()
+        local obj = mouse.Target.Parent
+        if not obj:FindFirstChild "RootCut" and obj.Parent.Name == "TreeRegion" then
+            return notify("错误!", "这棵树还没有砍!", 3)
         end
-      end
+        if obj:FindFirstChild "Owner" and obj.Owner.Value == lp and obj:FindFirstChild "WoodSection" then
+            wood = obj
+            notify("Dark", "已选择树!", 3)
+        end
+        if obj.Name:find("Sawmill")then
+            Saw=sawmill;
+            notify("Dark","剧木机已选择",4)
+        elseif obj.Parent.Name:find("Sawmill")or obj.Parent:FindFirstChild"BlockageAlert"then
+           Saw=obj.Parent
+           notify("Dark","剧木机已选择",4)
+        end
+    end)
+    repeat task.wait(.01) until wood and Saw ~= nil
+    ModTree:Disconnect()
+    ModTree = nil
+    s = true
+    local SawC = Saw.Particles.CFrame + Vector3.new(0.7, 0,0)
+    local cu,cw= 0,nil
+    for p, I in next, wood:GetChildren() do
+        if I.Name == "WoodSection" then
+            if I.ID.Value > cu then
+                cu = I.ID.Value
+                cw=I
+           end
+       end
     end
-  end
-  wait()
-  local tool= 0
-  for i,v in pairs (lp.Backpack:GetChildren()) do
+    for p, I in next, wood:GetChildren() do
+        if I.Name == "WoodSection" then
+            for p, b in next, I.ChildIDs:GetChildren() do
+                if b.Value ==cu then
+                    cv = I
+                end
+            end
+        end
+    end
+    wait() 
+    local tool= 0
+    for i,v in pairs (lp.Backpack:GetChildren()) do
     if v.Name ~= "BlueprintTool"then
       tool=tool+1
     end
   end
   if tool==0 then
     return
-    notify("Dark","你需要斧头",4)
+    notify("白","你需要斧头",4)
   end
 
 
@@ -328,61 +328,60 @@ end
       too = v
     end
   end
-  local toolname
+    local toolname
   for i ,v in pairs (too:GetChildren()) do
     if v.Name=="ToolName" then
       toolname=v.Value
       Damagefor=function(toolname)
-        return require(game.ReplicatedStorage.Purchasables.Tools.AllTools[toolname].AxeClass).new()
+          return require(game.ReplicatedStorage.Purchasables.Tools.AllTools[toolname].AxeClass).new()
       end
       Damage=Damagefor(toolname).Damage
     end
   end
-  game.Workspace["Region_Volcano"].Lava.Lava.CFrame=CFrame.new(5330,75.5,-15)
-  repeat wait()
-    --Fix by 0x15 & Laad
-    local ltem = cv
-    local bypassanticheat = "Ifyouarereadingthisstophackingbrolegitalsokrnlisbadbtw432rewdWdwFe432432rwDWDAVWdawgdGWAYDFGYTUW"
-    for e = 1, 15 do
-      game:GetService("ReplicatedStorage").Interaction.ClientIsDragging:FireServer(ltem,bypassanticheat)
-      ltem:PivotTo(game.Workspace["Region_Volcano"].Lava.Lava.CFrame)
-      game:GetService("ReplicatedStorage").Interaction.ClientIsDragging:FireServer(ltem,bypassanticheat)
-      game:GetService('RunService').Stepped:wait();
-    end
-    wait(0.1)
-    local ltem = cv
-    local bypassanticheat = "Ifyouarereadingthisstophackingbrolegitalsokrnlisbadbtw432rewdWdwFe432432rwDWDAVWdawgdGWAYDFGYTUW"
-    for e = 1, 15 do
-      game:GetService("ReplicatedStorage").Interaction.ClientIsDragging:FireServer(ltem,bypassanticheat)
-      ltem:PivotTo(game.Workspace["Region_Volcano"].Lava.Lava.CFrame + Vector3.new(0, 10,0))
-      game:GetService("ReplicatedStorage").Interaction.ClientIsDragging:FireServer(ltem,bypassanticheat)
-      game:GetService('RunService').Stepped:wait();
-    end
-
-  until cv:FindFirstChild("LavaFire");
-  cv:FindFirstChild("LavaFire"):Destroy();
-  for i=1,20 do
-    cw:PivotTo(cw.CFrame)
-    local bypassanticheat = "Ifyouarereadingthisstophackingbrolegitalsokrnlisbadbtw432rewdWdwFe432432rwDWDAVWdawgdGWAYDFGYTUW"
-    game:GetService("ReplicatedStorage").Interaction.ClientIsDragging:FireServer(cw,bypassanticheat)
-    cw:PivotTo(cw.CFrame)
-    cw.CFrame=SawC
-    cw.Parent = Saw
-    cw.Name = "For"
-    game:GetService("ReplicatedStorage").Interaction.ClientIsDragging:FireServer(cw,bypassanticheat)
-    game:GetService('RunService').Stepped:wait();
-    for i,v in pairs(Saw:GetDescendants()) do
-      if v.Name == "For" then
-        v:WaitForChild("BodyVelocity"):Destroy()
-        v:WaitForChild("BodyAngularVelocity"):Destroy()
-        v:WaitForChild("LavaFire"):Destroy()
-        v.CFrame=SawC
-        game:GetService("ReplicatedStorage").Interaction.ClientIsDragging:FireServer(v,bypassanticheat)
-        game:GetService('RunService').Stepped:wait();
+  local function anti()
+      if s then
+          loadstring(readfile("NoNNNNVQEBZQGE"))()
+          s = false
       end
-    end
   end
+    game.Workspace["Region_Volcano"].Lava.Lava.CFrame=CFrame.new(5330,75.5,-15)
+    repeat wait()
+                 --Fix by 0x15 & Laad
+         local ltem = cv
+        local bypassanticheat = "Ifyouarereadingthisstophackingbrolegitalsokrnlisbadbtw432rewdWdwFe432432rwDWDAVWdawgdGWAYDFGYTUW"
+         for e = 1, 15 do
+           game:GetService("ReplicatedStorage").Interaction.ClientIsDragging:FireServer(ltem,bypassanticheat)
+           ltem:PivotTo(game.Workspace["Region_Volcano"].Lava.Lava.CFrame)
+            game:GetService("ReplicatedStorage").Interaction.ClientIsDragging:FireServer(ltem,bypassanticheat)
+            game:GetService('RunService').Stepped:wait();
+        end
+          anti()
+       
+    until cv:FindFirstChild("LavaFire");
+    cv:FindFirstChild("LavaFire"):Destroy();
+    for i=1,20 do
+        cw:PivotTo(cw.CFrame)
+        local bypassanticheat = "Ifyouarereadingthisstophackingbrolegitalsokrnlisbadbtw432rewdWdwFe432432rwDWDAVWdawgdGWAYDFGYTUW"
+        game:GetService("ReplicatedStorage").Interaction.ClientIsDragging:FireServer(cw,bypassanticheat)
+        cw:PivotTo(cw.CFrame)
+        cw.CFrame=SawC
+        cw.Parent = Saw
+        cw.Name = "For"
+        game:GetService("ReplicatedStorage").Interaction.ClientIsDragging:FireServer(cw,bypassanticheat)
+        game:GetService('RunService').Stepped:wait();
+        for i,v in pairs(Saw:GetDescendants()) do
+            if v.Name == "For" then
+                v:WaitForChild("BodyVelocity"):Destroy()
+                v:WaitForChild("BodyAngularVelocity"):Destroy()
+                v:WaitForChild("LavaFire"):Destroy()
+                v.CFrame=SawC
+                game:GetService("ReplicatedStorage").Interaction.ClientIsDragging:FireServer(v,bypassanticheat)
+                game:GetService('RunService').Stepped:wait();
+            end
+        end
+    end
 end
+
 local function bringTree(treeClass)
   lp.Character.Humanoid:UnequipTools()
   local oldPos=lp.Character.HumanoidRootPart.CFrame;
@@ -810,7 +809,7 @@ end)
         Section6:Button("带来树", function()
           task.wait()
           bringTree(SelectTrre)
-        end)
+        end
     Section6:Button("停止", function()
       bai.bringtree=false
       workspace.Camera.CameraSubject = lp.Character
