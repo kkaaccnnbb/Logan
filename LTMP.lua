@@ -810,7 +810,7 @@ end)
         Section6:Button("带来树", function()
           task.wait()
           bringTree(SelectTrre)
-        end
+        end)
     Section6:Button("停止", function()
       bai.bringtree=false
       workspace.Camera.CameraSubject = lp.Character
