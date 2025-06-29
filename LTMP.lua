@@ -365,20 +365,14 @@ function modwood()
         game:GetService("ReplicatedStorage").Interaction.ClientIsDragging:FireServer(cw,bypassanticheat)
         cw:PivotTo(cw.CFrame)
         cw.CFrame=SawC
-        cw.Parent = Saw
-        cw.Name = "For"
         game:GetService("ReplicatedStorage").Interaction.ClientIsDragging:FireServer(cw,bypassanticheat)
         game:GetService('RunService').Stepped:wait();
-        for i,v in pairs(Saw:GetDescendants()) do
-            if v.Name == "For" then
-                v:WaitForChild("BodyVelocity"):Destroy()
-                v:WaitForChild("BodyAngularVelocity"):Destroy()
-                v:WaitForChild("LavaFire"):Destroy()
-                v.CFrame=SawC
-                game:GetService("ReplicatedStorage").Interaction.ClientIsDragging:FireServer(v,bypassanticheat)
-                game:GetService('RunService').Stepped:wait();
-            end
-        end
+        cw:WaitForChild("BodyVelocity"):Destroy()
+        cw:WaitForChild("BodyAngularVelocity"):Destroy()
+        cw:WaitForChild("LavaFire"):Destroy()
+        cw.CFrame=SawC
+        game:GetService("ReplicatedStorage").Interaction.ClientIsDragging:FireServer(v,bypassanticheat)
+        game:GetService('RunService').Stepped:wait();       
     end
 end
 
