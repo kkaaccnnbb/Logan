@@ -1394,6 +1394,43 @@ function library.new(library, name,theme)
         
         return funcs
       end
+      function section:ChatSystem(Text)
+        local ChatSystemModule = Instance.new("Frame")
+        local ScrollingFrame = Instance.new("ScrollingFrame")
+        local TextLabel = Instance.new("TextLabel")
+
+        ChatSystemModule.Name = "ChatSystemModule"
+        ChatSystemModule.Parent = Objs
+        ChatSystemModule.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        ChatSystemModule.BackgroundTransparency = 0.75
+        ChatSystemModule.BorderSizePixel = 0
+        ChatSystemModule.Position = UDim2.new(0, 0, 0, 0)
+        ChatSystemModule.Size = UDim2.new(0, 428, 0, 250)
+
+        ScrollingFrame.Parent = ChatSystemModule
+        ScrollingFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+        ScrollingFrame.BackgroundTransparency = 0.6
+        ScrollingFrame.BorderSizePixel = 0
+        ScrollingFrame.Size = UDim2.new(0, 428, 0, 250)
+        ScrollingFrame.AutomaticCanvasSize = Enum.AutomaticSize.XY
+        
+        TextLabel.Parent = ScrollingFrame
+        TextLabel.AutomaticSize = Enum.AutomaticSize.XY
+        TextLabel.BackgroundTransparency = 1
+        TextLabel.Active = false
+        TextLabel.Size = UDim2.new(0, 50, 0, 30)
+        TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+        TextLabel.TextSize = 14.000
+        
+        local funcs = {}
+        function funcs:SetText(NewText)
+          TextLabel.Text = NewText
+        end
+        
+        funcs:SetText(Text)
+        
+        return funcs
+      end
       return section
     end
     return tab
