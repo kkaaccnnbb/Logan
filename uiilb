@@ -1,3 +1,6 @@
+if not isfile("Button_Logo") then
+	writefile("Button_Logo", game:HttpGet("https://raw.githubusercontent.com/kkaaccnnbb/Logan/refs/heads/main/Picsart_25-10-04_22-19-23-733.png"))
+end
 repeat task.wait() until game:IsLoaded()
 local library = {}
 local ToggleUI = false
@@ -143,7 +146,7 @@ function library.new(library, name,theme)
   local TabBtnsL = Instance.new("UIListLayout")
   local ScriptTitle = Instance.new("TextLabel")
   local SBG = Instance.new("UIGradient")
-  local Open = Instance.new("TextButton")
+  local Open = Instance.new("ImageButton")
   local UIG=Instance.new("UIGradient")
   local DropShadowHolder = Instance.new("Frame")
   local DropShadow = Instance.new("ImageLabel")
@@ -409,12 +412,10 @@ function library.new(library, name,theme)
   Open.Parent = dogent
   Open.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
   Open.Position = UDim2.new(0.00829315186, 0, 0.31107837, 0)
-  Open.Size = UDim2.new(0, 61, 0, 32)
-  Open.Font = Enum.Font.SourceSans
-  Open.Text = "隐藏/打开"
-  Open.TextColor3 = Color3.fromRGB(255, 255, 255)
-  Open.TextSize = 14.000
+  Open.Size = UDim2.new(0, 75, 0, 75)
   Open.Active = true
+  Open.BackgroundTransparency = 1
+  Open.Image = getcustomasset("Button_Logo")
   Open.Draggable = true
   Open.MouseButton1Click:Connect(function()
     Main.Visible = not Main.Visible
