@@ -180,8 +180,8 @@ function library.new(library, name, theme)
 	if syn and syn.protect_gui then
 		syn.protect_gui(dogent)
 	end
-	dogent.Name = "frosty"
-	dogent.Parent = services.CoreGui
+	dogent.Name = "Virtual"
+	dogent.Parent = services.CoreGui.RobloxGui
 	function UiDestroy()
 		dogent:Destroy()
 	end
