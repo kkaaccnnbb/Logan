@@ -656,7 +656,7 @@ function library.new(library, name, theme)
 				ToggleDisable.Size = UDim2.new(0, 36, 0, 22)
 				ToggleSwitch.Name = "ToggleSwitch"
 				ToggleSwitch.Parent = ToggleDisable
-				ToggleSwitch.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+				ToggleSwitch.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 				ToggleSwitch.Size = UDim2.new(0, 24, 0, 22)
 				ToggleSwitchC.CornerRadius = UDim.new(0, 6)
 				ToggleSwitchC.Name = "ToggleSwitchC"
@@ -674,7 +674,7 @@ function library.new(library, name, theme)
 						end
 						services.TweenService:Create(ToggleSwitch, TweenInfo.new(0.2), {
 							Position = UDim2.new(0, (state and ToggleSwitch.Size.X.Offset / 2 or 0), 0, 0),
-							BackgroundColor3 = (state and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(25, 25, 25))
+							BackgroundColor3 = (state and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(20, 20, 20))
 						}):Play()
 						library.flags[flag] = state
 						callback(state)
