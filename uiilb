@@ -1002,7 +1002,7 @@ function library.new(library, name, theme)
 						percent = math.clamp(percent, 0, 1)
 						local step = add or 1
 						if precise then
-							value = value or tonumber(string.format("%.12f", tostring(min + (max - min) * percent)))  -- 12 位小数足够
+							value = value or tonumber(string.format("%.2f", tostring(min + (max - min) * percent)))  -- 12 位小数足够
 						else
 							value = value or math.floor(min + (max - min) * percent)
 						end
