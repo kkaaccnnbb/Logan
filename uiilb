@@ -882,7 +882,7 @@ function library.new(library, name, theme)
 				end)
 				BoxBG.Size = UDim2.new(0, TextBox.TextBounds.X + 30, 0, 28)
 			end
-			function section.Slider(section, text, flag, default, min, max, precise, callback)
+			function section.Slider(section, text, flag, default, min, max, precise, callback, add)
 				local callback = callback or function()
 				end
 				local min = min or 1
@@ -1013,12 +1013,12 @@ function library.new(library, name, theme)
 				}
 				MinSlider.MouseButton1Click:Connect(function()
 					local currentValue = library.flags[flag]
-					currentValue = math.clamp(currentValue - 1, min, max)
+					currentValue = math.clamp(currentValue - add or 1, min, max)
 					funcs:SetValue(currentValue)
 				end)
 				AddSlider.MouseButton1Click:Connect(function()
 					local currentValue = library.flags[flag]
-					currentValue = math.clamp(currentValue + 1, min, max)
+					currentValue = math.clamp(currentValue + add or 1, min, max)
 					funcs:SetValue(currentValue)
 				end)
 				funcs:SetValue(default)
