@@ -999,7 +999,7 @@ function library.new(library, name, theme)
 						if value then
 							percent = (value - min) / (max - min)
 						end
-						percent = math.clamp(percent, 0, 1)
+						percent = add < 1 and percent or math.clamp(percent, 0, 1)
 						if precise then
 							value = value or tonumber(string.format("%.1f", tostring(min + (max - min) * percent)))
 						else
